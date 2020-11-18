@@ -8,6 +8,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BottomBarComponent } from './features/global/bottom-bar/bottom-bar.component';
+import { TopNavBarComponent } from './features/global/top-nav-bar/top-nav-bar.component';
+import { HomePageComponent } from './features/home-page/home-page.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBVXDwII_o-I2NeluOEP3GOuRlL2xaIeZ8",
@@ -21,7 +24,10 @@ const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BottomBarComponent,
+    TopNavBarComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
