@@ -1,0 +1,55 @@
+#container {
+    padding-left: 12rem;
+    padding-right: 12rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#image {
+    position: relative;
+    border-radius: 50%;
+    width: 200px;
+}
+#name-card {
+    display: flex;
+    align-content: space-between;
+}
+
+#text-stuff {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-left: 2rem;
+}
+
+#form-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    mat-slider {
+        width: 25rem;
+    }
+    #recycling {
+        #top {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+        #bot {
+            display: flex;
+        }
+    }
+    #rec-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #form-columns {
+        flex-direction: column;
+    }
+}

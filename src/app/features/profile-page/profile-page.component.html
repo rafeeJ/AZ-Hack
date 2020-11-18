@@ -1,0 +1,52 @@
+<div id="container">
+
+    <mat-card id="name-card">
+        <img id="image"
+            src="https://avatars1.githubusercontent.com/u/1508676?s=460&u=b2e51a0ca47547585614685cec42a1c16955986c&v=4"
+            alt="meow">
+        <div id="text-stuff">
+            <h1>Rafee J. Jenkins</h1>
+            <h3>Amadeus IT Group</h3>
+        </div>
+    </mat-card>
+
+    <div id="form-columns">
+        <mat-card id="travel">
+            <h2>Travel</h2>
+            <h3>Car use</h3>
+            <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="8"></mat-slider>
+            <h3>Bus use</h3>
+            <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="8"></mat-slider>
+            <h3>Train use</h3>
+            <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="8"></mat-slider>
+        </mat-card>
+
+        <mat-card id="recycling">
+            <h2>Recycling</h2>
+            <div id="rec-container">
+                <div id="top">
+                    <mat-checkbox labelPosition='before'>Food</mat-checkbox>
+                    <mat-checkbox labelPosition='before'>Metals</mat-checkbox>
+                    <mat-checkbox labelPosition='before'>Plastic</mat-checkbox>
+                </div>
+                <div id="bot">
+                    <mat-checkbox labelPosition='before'>Glass</mat-checkbox>
+                    <mat-checkbox labelPosition='before'>Paper</mat-checkbox>
+                </div>
+            </div>
+        </mat-card>
+
+        <mat-card id="tech">
+            <h2>Tech Use</h2>
+            <h3>Phone</h3>
+            <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="8"></mat-slider>
+            <h3>Laptop</h3>
+            <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="8"></mat-slider>
+            <h3>TV</h3>
+            <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="8"></mat-slider>
+
+
+        </mat-card>
+    </div>
+
+</div>
