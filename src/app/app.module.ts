@@ -5,9 +5,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BottomBarComponent } from './features/global/bottom-bar/bottom-bar.component';
 import { TopNavBarComponent } from './features/global/top-nav-bar/top-nav-bar.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
@@ -35,9 +37,10 @@ const firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule, // firestore
-    AngularFireAuthModule, // auth
-    NgbModule, 
-    BrowserAnimationsModule
+    AngularFireAuthModule, // auth 
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
