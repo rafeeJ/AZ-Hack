@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/User';
 import { AuthService } from 'src/app/services/auth.service';
-import { DefaultService } from 'src/open-api';
 
 @Component({
   selector: 'app-profile-page',
@@ -10,7 +9,7 @@ import { DefaultService } from 'src/open-api';
 })
 export class ProfilePageComponent implements OnInit {
 
-  constructor(private auth: AuthService, private api: DefaultService) { }
+  constructor(private auth: AuthService) { }
 
   user: User;
 
@@ -22,10 +21,10 @@ export class ProfilePageComponent implements OnInit {
   }
 
   thisGetUserID() {
-    this.api.getUserUserID(this.user.uid)
-      .subscribe(user => {
-        this.profile = user
-    })
+    // this.api.getUserUserID(this.user.uid)
+    //   .subscribe(user => {
+    //     this.profile = user
+    // })
   }
 
   formatLabel(value: number) {

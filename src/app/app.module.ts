@@ -23,7 +23,6 @@ import { TopNavBarComponent } from './features/global/top-nav-bar/top-nav-bar.co
 import { HomePageComponent } from './features/home-page/home-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfilePageComponent } from './features/profile-page/profile-page.component';
-import { DefaultService } from 'src/open-api';
 import { HttpClientModule } from '@angular/common/http';
 
 const firebaseConfig = {
@@ -69,7 +68,7 @@ declare module "@angular/core" {
     MatCheckboxModule,
     HttpClientModule
   ],
-  providers: [DefaultService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
