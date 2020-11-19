@@ -21,7 +21,7 @@ export class ApiService {
   }
   postUserfromUID(body) {
     //return this.http.post(`${environment.apiUrl}/users/`, body)
-    return this.afs.collection("profiles").doc(body.user_id).set(body, {merge: true})
+    return this.afs.collection("profiles").doc(body.uid).set(body, {merge: true})
   }
   
   getUserReportfromUID(id, date) {

@@ -60,8 +60,10 @@ export class ProfilePageComponent implements OnInit {
 
   submitForm() {
     const data = {
-      user_id: this.profile.uid,
-      user_name: this.profile.displayName,
+      //user_id: this.profile.uid,
+      uid: this.profile.uid,
+      //user_name: this.profile.displayName,
+      displayName: this.profile.displayName,
       diet_default: this.selected,
       
       train_travel_default: this.train ? this.train : this.profile.train_travel_default,
@@ -81,9 +83,7 @@ export class ProfilePageComponent implements OnInit {
     console.log(data);
     
 
-    this.api.postUserfromUID(data).then(data => {
-      console.log(data);
-    })
+    this.api.postUserfromUID(data)
     
   }
 }
