@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-home-page',
@@ -8,15 +9,18 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, private router:Router) { }
 
-  name: string = ""
+  goToPage(pageName:string):void{
+    this.router.navigate([pageName])
+  }  
 
   ngOnInit(): void {
-    this.auth.user$.subscribe(user => {
-      this.name = user.displayName
-      console.log(this.name)
-    })
+
   }
 
+
+
 }
+
+

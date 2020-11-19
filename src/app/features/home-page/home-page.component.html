@@ -31,10 +31,10 @@
     <div *ngIf="auth.user$ | async as user" class="center">
         <h1 style="font-size:40px; margin-top: 8%;" class="top">Welcome {{user.displayName}}!</h1>
         <h1 style="margin-top: 5%"> Enter your daily usage here</h1>
-        <button class="buttons">Meals</button>
-        <button class="buttons">Travel</button>
-        <button class="buttons">Electronics</button>
-        <button class="buttons">Recycling</button>
+        <button class="buttons" (click)="goToPage('meals')">Meals</button>
+        <button class="buttons" (click)="goToPage('travel')">Travel</button>
+        <button class="buttons" (click)="goToPage('elec')">Electronics</button>
+        <button class="buttons" (click)="goToPage('recycling')">Recycling</button>
     </div>
 </ng-template>
 

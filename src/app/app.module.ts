@@ -15,6 +15,10 @@ import { BottomBarComponent } from './features/global/bottom-bar/bottom-bar.comp
 import { TopNavBarComponent } from './features/global/top-nav-bar/top-nav-bar.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DailyMealsComponent } from './features/daily-meals/daily-meals.component';
+import { DailyTravelComponent } from './features/daily-travel/daily-travel.component';
+import { DailyRecyclingComponent } from './features/daily-recycling/daily-recycling.component';
+import { DailyElecComponent } from './features/daily-elec/daily-elec.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBVXDwII_o-I2NeluOEP3GOuRlL2xaIeZ8",
@@ -31,7 +35,11 @@ const firebaseConfig = {
     AppComponent,
     BottomBarComponent,
     TopNavBarComponent,
-    HomePageComponent
+    HomePageComponent,
+    DailyMealsComponent,
+    DailyTravelComponent,
+    DailyRecyclingComponent,
+    DailyElecComponent
   ],
   imports: [
     BrowserModule,
