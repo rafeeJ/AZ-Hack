@@ -1,1 +1,12 @@
-<p>daily-travel works!</p>
+<mat-card id="travel">
+    <h2>Travel</h2>
+    <h3>Car use</h3>
+    <mat-slider thumbLabel [(ngModel)]="car" [displayWith]="formatLabel" (change)="onChange($event)"
+        [value]="profile?.car_travel_default" tickInterval="1" min="0" max="8"></mat-slider>
+    <h3>Bus use</h3>
+    <mat-slider thumbLabel [(ngModel)]="bus" [displayWith]="formatLabel" (change)="onChange($event)"
+        [value]="profile?.bus_travel_default" tickInterval="1" min="0" max="8"></mat-slider>
+    <h3>Train use</h3>
+    <mat-slider thumbLabel [(ngModel)]="train" [displayWith]="formatLabel" (change)="onChange($event)"
+        [value]="profile?.train_travel_default" tickInterval="1" min="0" max="8"></mat-slider>
+</mat-card>
