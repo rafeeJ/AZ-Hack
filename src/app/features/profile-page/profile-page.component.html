@@ -1,0 +1,72 @@
+<div id="container">
+
+    <mat-card id="name-card">
+        <img id="image"
+            src="https://avatars1.githubusercontent.com/u/1508676?s=460&u=b2e51a0ca47547585614685cec42a1c16955986c&v=4"
+            alt="meow">
+        <div id="text-stuff">
+            <h1>{{ user?.displayName }}</h1>
+            <div style="display: flex;">
+                <h3 style="padding-right: 1rem;" *ngFor="let org of profile?.organisations">{{org}}</h3>
+            </div>
+            <mat-select [(value)]="selected">
+                <mat-option value="Meat">Meat</mat-option>
+                <mat-option value="Vegan">Vegan</mat-option>
+                <mat-option value="Vegetarian">Vegetarian</mat-option>
+                <mat-option value="Pescatarian">Pescatarian</mat-option>
+            </mat-select>
+        </div>
+    </mat-card>
+
+    <div id="form-columns">
+        <mat-card id="travel">
+            <h2>Travel</h2>
+            <h3>Car use</h3>
+            <mat-slider thumbLabel [(ngModel)]="car" [displayWith]="formatLabel" (change)="onChange($event)"
+                [value]="profile?.car_travel_default" tickInterval="1" min="0" max="8"></mat-slider>
+            <h3>Bus use</h3>
+            <mat-slider thumbLabel [(ngModel)]="bus" [displayWith]="formatLabel" (change)="onChange($event)"
+                [value]="profile?.bus_travel_default" tickInterval="1" min="0" max="8"></mat-slider>
+            <h3>Train use</h3>
+            <mat-slider thumbLabel [(ngModel)]="train" [displayWith]="formatLabel" (change)="onChange($event)"
+                [value]="profile?.train_travel_default" tickInterval="1" min="0" max="8"></mat-slider>
+        </mat-card>
+
+        <mat-card id="recycling">
+            <h2>Recycling</h2>
+            <div id="rec-container">
+                <div id="top">
+                    <mat-checkbox labelPosition='before' [(ngModel)]="food" [checked]="profile?.food_disposal_default">Food</mat-checkbox>
+                    <mat-checkbox labelPosition='before' [(ngModel)]="metal" [checked]="profile?.tin_disposal_default">Metals</mat-checkbox>
+                    <mat-checkbox labelPosition='before' [(ngModel)]="plastic" [checked]="profile?.plastic_disposal_default">Plastic
+                    </mat-checkbox>
+                </div>
+                <div id="bot">
+                    <mat-checkbox labelPosition='before' [(ngModel)]="glass" [checked]="profile?.glass_disposal_default">Glass
+                    </mat-checkbox>
+                    <mat-checkbox labelPosition='before' [(ngModel)]="paper" [checked]="profile?.paper_disposal_default">Paper
+                    </mat-checkbox>
+                </div>
+            </div>
+        </mat-card>
+
+        <mat-card id="tech">
+            <h2>Tech Use</h2>
+            <h3>Phone</h3>
+            <mat-slider thumbLabel [(ngModel)]="phone" [displayWith]="formatLabel" (change)="onChange($event)"
+                [value]="profile?.mobile_screentime_default" tickInterval="1" min="0" max="8"></mat-slider>
+            <h3>Laptop</h3>
+            <mat-slider thumbLabel [(ngModel)]="laptop" [displayWith]="formatLabel" (change)="onChange($event)"
+                [value]="profile?.computer_screetime_default" tickInterval="1" min="0" max="8"></mat-slider>
+            <h3>TV</h3>
+            <mat-slider thumbLabel [(ngModel)]="tv" [displayWith]="formatLabel" (change)="onChange($event)"
+                [value]="profile?.tv_screentime_default" tickInterval="1" min="0" max="8"></mat-slider>
+        </mat-card>
+    </div>
+
+    <div id="submit-changes" *ngIf="edited">
+        <h1 style="color: orangered;">Make sure to save changes!</h1>
+        <button mat-raised-button (click)="submitForm()">Submit</button>
+    </div>
+
+</div>

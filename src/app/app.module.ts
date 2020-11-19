@@ -8,7 +8,18 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatListModule } from '@angular/material/list'; 
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BottomBarComponent } from './features/global/bottom-bar/bottom-bar.component';
@@ -20,6 +31,11 @@ import { DailyTravelComponent } from './features/daily-travel/daily-travel.compo
 import { DailyRecyclingComponent } from './features/daily-recycling/daily-recycling.component';
 import { DailyElecComponent } from './features/daily-elec/daily-elec.component';
 
+import { ProfilePageComponent } from './features/profile-page/profile-page.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { LeaderboardComponent } from './features/leaderboard/leaderboard.component';
+
 const firebaseConfig = {
   apiKey: "AIzaSyBVXDwII_o-I2NeluOEP3GOuRlL2xaIeZ8",
   authDomain: "az-hack.firebaseapp.com",
@@ -30,6 +46,12 @@ const firebaseConfig = {
   appId: "1:521646212220:web:86aaf5a5e949d3cea135f9"
 };
 
+declare module "@angular/core" {
+  interface ModuleWithProviders<T = any> {
+    ngModule: Type<T>;
+    providers?: Provider[];
+  }
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,10 +61,14 @@ const firebaseConfig = {
     DailyMealsComponent,
     DailyTravelComponent,
     DailyRecyclingComponent,
-    DailyElecComponent
+    DailyElecComponent,
+    ProfilePageComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule, // firestore
@@ -50,8 +76,21 @@ const firebaseConfig = {
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule,
+    MatSliderModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    HttpClientModule,
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
+    MatListModule
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

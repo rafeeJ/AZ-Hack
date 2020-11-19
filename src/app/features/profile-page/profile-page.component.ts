@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router'
 import { Profile } from 'src/app/models/profile';
 import { User } from 'src/app/models/User';
 import { ApiService } from 'src/app/services/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  selector: 'app-profile-page',
+  templateUrl: './profile-page.component.html',
+  styleUrls: ['./profile-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class ProfilePageComponent implements OnInit {
 
-  constructor(private auth: AuthService, private api: ApiService, private router: Router) { }
+  constructor(private auth: AuthService, private api: ApiService) { }
 
   user: User;
   profile: Profile;
@@ -59,10 +58,6 @@ export class HomePageComponent implements OnInit {
     this.edited = true;
   }
 
-  goToLeaderboard() {
-    this.router.navigate(['leaderboard']);
-  }
-
   submitForm() {
     const data = {
       //user_id: this.profile.uid,
@@ -92,5 +87,3 @@ export class HomePageComponent implements OnInit {
     
   }
 }
-
-

@@ -1,24 +1,20 @@
-.center {
-    text-align: center;
-}
-
-.top {
-    margin-top: 60px;
-}
-
-.buttons {
-    border-radius:5px;
-    width: 15%;
-    margin: 2.5%;
-    margin-top:7.5%
-}
-
 #container {
     padding-left: 10rem;
     padding-right: 10rem;
     padding-top: 2rem;
     display: flex;
     flex-direction: column;
+}
+
+#image {
+    position: relative;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+}
+#name-card {
+    display: flex;
+    align-content: space-between;
 }
 
 #text-stuff {
@@ -46,20 +42,11 @@
             display: flex;
         }
     }
-    #diet {
-        width: 10rem;
-    }
     #rec-container {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-}
-
-#leaderboard {
-    width: 20%;
-    margin-left: 40%;
-    margin-right: 40%;
 }
 
 #submit-changes {

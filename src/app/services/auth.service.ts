@@ -44,6 +44,7 @@ export class AuthService {
   private updateUserData(user) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+    //const thing: AngularFirestoreDocument = this.afs.doc(`profiles/${user.uid}`);
 
     const data = { 
       uid: user.uid, 
@@ -51,7 +52,28 @@ export class AuthService {
       displayName: user.displayName, 
       photoURL: user.photoURL
     } 
-    
+
+  //   let x = {
+  //     "bus_travel_default": 0.0,
+  //     "car_travel_default": 2.0,
+  //     "computer_screetime_default": 6.0,
+  //     "diet_default": "meat",
+  //     "food_disposal_default": 1,
+  //     "glass_disposal_default": 1,
+  //     "mobile_screentime_default": 4.0,
+  //     "organisations": [
+  //         "AstraZeneca",
+  //         "Microsoft"
+  //     ],
+  //     "paper_disposal_default": 1,
+  //     "plastic_disposal_default": 1,
+  //     "tin_disposal_default": 0,
+  //     "train_travel_default": 3.0,
+  //     "tv_screentime_default": 2.0,
+  //     "uid": user.uid,
+  //     "displayName": user.displayName
+  // }
+  //   thing.set(x, {merge: true})
     return userRef.set(data, { merge: true })
   }
 

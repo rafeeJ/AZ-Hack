@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./daily-travel.component.scss']
 })
 export class DailyTravelComponent implements OnInit {
+  car: number;
+  bus: number;
+  train: number;
+
+  
 
   constructor() { }
 

@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AZ-Hack"
+    }
+  },
+  "defaultProject": "AZ-Hack",
+  "cli": {
+    "analytics": "f135713d-9112-4ab5-bdfe-900987b3e245"
+  }
 }
