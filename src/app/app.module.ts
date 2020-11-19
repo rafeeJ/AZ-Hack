@@ -14,6 +14,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,8 +26,11 @@ import { BottomBarComponent } from './features/global/bottom-bar/bottom-bar.comp
 import { TopNavBarComponent } from './features/global/top-nav-bar/top-nav-bar.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { ProfilePageComponent } from './features/profile-page/profile-page.component';
 import { HttpClientModule } from '@angular/common/http';
+
+import { LeaderboardComponent } from './features/leaderboard/leaderboard.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBVXDwII_o-I2NeluOEP3GOuRlL2xaIeZ8",
@@ -47,7 +54,8 @@ declare module "@angular/core" {
     BottomBarComponent,
     TopNavBarComponent,
     HomePageComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +76,12 @@ declare module "@angular/core" {
     MatCheckboxModule,
     MatSelectModule,
     HttpClientModule
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatPaginatorModule
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
