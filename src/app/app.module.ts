@@ -8,19 +8,29 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BottomBarComponent } from './features/global/bottom-bar/bottom-bar.component';
 import { TopNavBarComponent } from './features/global/top-nav-bar/top-nav-bar.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ProfilePageComponent } from './features/profile-page/profile-page.component';
+import { HttpClientModule } from '@angular/common/http';
+
 import { LeaderboardComponent } from './features/leaderboard/leaderboard.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSortModule } from '@angular/material/sort';
-import { MatInputModule } from '@angular/material/input';
-import { MatPaginatorModule } from '@angular/material/paginator';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBVXDwII_o-I2NeluOEP3GOuRlL2xaIeZ8",
@@ -32,16 +42,25 @@ const firebaseConfig = {
   appId: "1:521646212220:web:86aaf5a5e949d3cea135f9"
 };
 
+declare module "@angular/core" {
+  interface ModuleWithProviders<T = any> {
+    ngModule: Type<T>;
+    providers?: Provider[];
+  }
+}
 @NgModule({
   declarations: [
     AppComponent,
     BottomBarComponent,
     TopNavBarComponent,
     HomePageComponent,
+    ProfilePageComponent,
     LeaderboardComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule, // firestore
@@ -50,10 +69,16 @@ const firebaseConfig = {
     MatToolbarModule,
     MatButtonModule,
     MatMenuModule,
+    MatCardModule,
+    MatSliderModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    HttpClientModule
     MatTableModule,
     MatSortModule,
     MatFormFieldModule,
-    MatInputModule,
     MatPaginatorModule
   ],
   exports: [],
