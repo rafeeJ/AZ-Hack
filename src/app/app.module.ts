@@ -15,6 +15,12 @@ import { BottomBarComponent } from './features/global/bottom-bar/bottom-bar.comp
 import { TopNavBarComponent } from './features/global/top-nav-bar/top-nav-bar.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LeaderboardComponent } from './features/leaderboard/leaderboard.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBVXDwII_o-I2NeluOEP3GOuRlL2xaIeZ8",
@@ -31,7 +37,8 @@ const firebaseConfig = {
     AppComponent,
     BottomBarComponent,
     TopNavBarComponent,
-    HomePageComponent
+    HomePageComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +49,14 @@ const firebaseConfig = {
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatPaginatorModule
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
