@@ -1,6 +1,6 @@
 #container {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
     padding-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -9,7 +9,8 @@
 #image {
     position: relative;
     border-radius: 50%;
-    width: 200px;
+    width: 5rem;
+    height: 5rem;
 }
 #name-card {
     display: flex;
@@ -55,7 +56,11 @@
 }
 
 @media only screen and (max-width: 768px) {
+
     #form-columns {
         flex-direction: column;
+        mat-card {
+            margin-top: 1rem;
+        }
     }
 }
