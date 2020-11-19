@@ -20,7 +20,7 @@ const LeaderboardUserData: LeaderboardUser[] = [
   {name: "Laurence", organisation: ["AzHacker3"], dietScore: 80, techScore: 90, travelScore: 20, recyclingScore: 20, totScore: 210},
   {name: "Rafee", organisation: ["AzHacker4"], dietScore: 50, techScore: 85, travelScore: 50, recyclingScore: 80, totScore: 265},
   {name: "Tom", organisation: ["AzHacker2"], dietScore: 80, techScore: 80, travelScore: 20, recyclingScore: 30, totScore: 210},
-  {name: "Steve", organisation: ["AstraZenica"], dietScore: 100, techScore: 100, travelScore: 0, recyclingScore: 70, totScore: 270}
+  {name: "Steve", organisation: ["AstraZeneca"], dietScore: 100, techScore: 100, travelScore: 0, recyclingScore: 70, totScore: 270}
 ]
 
 @Component({

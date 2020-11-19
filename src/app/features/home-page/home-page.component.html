@@ -1,1 +1,96 @@
-<p>home-page works!</p>
+<div *ngIf="auth.user$ | async; then authenticated else guest"></div>
+
+<ng-template #guest>
+    <body class="center">
+
+        <h1 style="font-size:40px" class="top">AZ-Hack Name</h1>
+        <br>
+        <br>
+
+        <p style="font-size: 20px">This Hackathons No.1 rated Carbon emissions tracking app</p>
+        <br> 
+
+        <br>
+        <p> ENTER NAME HERE is an app to help you and you co-workers to keep track of your carbon emissions. You can view how your carbon footprint is affected by the lifestyle choices you make, and compare you footprint with your friends and colleagues</p>
+        <p> We aim to make us more awear of our effect on this planet and the steps we can make to reduce our impact</p>
+        <p> Using ENTER NAME HERE you can enter aspects about your day to receive a carbon footprint raiting visible to you and you contantacts through our leaderboard. </p>
+    </body>
+    <br>
+
+
+
+    <button button  style="width: 15%; height: 20%; border-radius: 8px;
+    margin-left: 42.5%; font-size: 40px;"(click)="auth.googleSignin()">Login</button>
+</ng-template>
+
+
+<ng-template #authenticated>
+    <div *ngIf="auth.user$ | async as user" class="center">
+        <h1 style="font-size:40px; margin-top: 8%;" class="top">Welcome {{user.displayName}}!</h1>
+        <h1 style="margin-top: 5%"> Enter your daily usage here</h1>
+        <!-- <button class="buttons" (click)="goToPage('meals')">Meals</button>
+        <button class="buttons" (click)="goToPage('travel')">Travel</button>
+        <button class="buttons" (click)="goToPage('elec')">Electronics</button>
+        <button class="buttons" (click)="goToPage('recycling')">Recycling</button> -->
+        <div id="form-columns">
+            <mat-card id="diet">
+                <h2>Diet</h2>
+                <mat-select [(value)]="selected">
+                    <mat-option value="Meat">Meat</mat-option>
+                    <mat-option value="Vegan">Vegan</mat-option>
+                    <mat-option value="Vegetarian">Vegetarian</mat-option>
+                    <mat-option value="Pescatarian">Pescatarian</mat-option>
+                </mat-select>
+            </mat-card>
+            <mat-card id="travel">
+                <h2>Travel</h2>
+                <h3>Car use</h3>
+                <mat-slider thumbLabel [(ngModel)]="car" [displayWith]="formatLabel" (change)="onChange($event)"
+                    [value]="profile?.car_travel_default" tickInterval="1" min="0" max="8"></mat-slider>
+                <h3>Bus use</h3>
+                <mat-slider thumbLabel [(ngModel)]="bus" [displayWith]="formatLabel" (change)="onChange($event)"
+                    [value]="profile?.bus_travel_default" tickInterval="1" min="0" max="8"></mat-slider>
+                <h3>Train use</h3>
+                <mat-slider thumbLabel [(ngModel)]="train" [displayWith]="formatLabel" (change)="onChange($event)"
+                    [value]="profile?.train_travel_default" tickInterval="1" min="0" max="8"></mat-slider>
+            </mat-card>
+    
+            <mat-card id="recycling">
+                <h2>Recycling</h2>
+                <div id="rec-container">
+                    <mat-list role="list">
+                        <mat-list-item role="listitem"><mat-checkbox labelPosition='before' [(ngModel)]="food" [checked]="profile?.food_disposal_default">Food</mat-checkbox></mat-list-item>
+                        <mat-list-item role="listitem"><mat-checkbox labelPosition='before' [(ngModel)]="metal" [checked]="profile?.tin_disposal_default">Metals</mat-checkbox></mat-list-item>
+                        <mat-list-item role="listitem"><mat-checkbox labelPosition='before' [(ngModel)]="plastic" [checked]="profile?.plastic_disposal_default">Plastic</mat-checkbox></mat-list-item>
+                        <mat-list-item role="listitem"><mat-checkbox labelPosition='before' [(ngModel)]="glass" [checked]="profile?.glass_disposal_default">Glass</mat-checkbox></mat-list-item>
+                        <mat-list-item role="listitem"><mat-checkbox labelPosition='before' [(ngModel)]="paper" [checked]="profile?.paper_disposal_default">Paper</mat-checkbox></mat-list-item>
+                    </mat-list>
+                </div>
+            </mat-card>
+    
+            <mat-card id="tech">
+                <h2>Tech Use</h2>
+                <h3>Phone</h3>
+                <mat-slider thumbLabel [(ngModel)]="phone" [displayWith]="formatLabel" (change)="onChange($event)"
+                    [value]="profile?.mobile_screentime_default" tickInterval="1" min="0" max="8"></mat-slider>
+                <h3>Laptop</h3>
+                <mat-slider thumbLabel [(ngModel)]="laptop" [displayWith]="formatLabel" (change)="onChange($event)"
+                    [value]="profile?.computer_screetime_default" tickInterval="1" min="0" max="8"></mat-slider>
+                <h3>TV</h3>
+                <mat-slider thumbLabel [(ngModel)]="tv" [displayWith]="formatLabel" (change)="onChange($event)"
+                    [value]="profile?.tv_screentime_default" tickInterval="1" min="0" max="8"></mat-slider>
+            </mat-card>
+        </div>
+    
+        <div id="submit-changes" *ngIf="edited">
+            <h1 style="color: orangered;">Make sure to save changes!</h1>
+            <button mat-raised-button (click)="submitForm()">Submit</button>
+        </div>
+    </div>
+    <div style="width: 40%; margin-left: 30%; margin-right: 30%; text-align: center; margin-top: 40px;">
+        <h2>Part of a team? Check your ranking here!</h2>
+        <button mat-raised-button (click)="goToLeaderboard()">Leaderboard</button>
+    </div>
+</ng-template>
+
+
