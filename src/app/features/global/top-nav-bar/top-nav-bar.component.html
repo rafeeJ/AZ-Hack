@@ -1,12 +1,12 @@
-<mat-toolbar color="primary">
-  <span [routerLink]="['/']">AZ Hack</span>
+<mat-toolbar style="background-color:green;" color="primary">
+  <span [routerLink]="['/']">Carbon Contest</span>
   <span class="spacer"></span>
   <div *ngIf="auth.user$ | async; then authenticated else guest"></div>
 </mat-toolbar>
 
 <!-- User NOT logged in -->
 <ng-template #guest>
-  <button mat-raised-button color="accent" (click)="auth.googleSignin()">
+  <button mat-raised-button color="accent" style="background-color: white; color: black;" (click)="auth.googleSignin()">
     <i class="fa fa-google"></i>Login</button>
 </ng-template>
 
@@ -15,7 +15,7 @@
 <ng-template #authenticated>
   <div *ngIf="auth.user$ | async as user">
     <span class="spacer"></span>
-    <button mat-mini-fab color="accent" style="background-position: center; background-size: contain;" [ngStyle]="{ 'background-image': 'url(' + user.photoURL + ')'}" [matMenuTriggerFor]="beforeMenu">
+    <button mat-mini-fab style="background-position: center; background-size: contain;" [ngStyle]="{ 'background-image': 'url(' + user.photoURL + ')'}" [matMenuTriggerFor]="beforeMenu">
       <!-- <img [src]="user.photoURL" alt=""> -->
     </button>
   </div>
