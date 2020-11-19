@@ -48,6 +48,12 @@
     }
 }
 
+#submit-changes {
+    padding-top: 2rem;
+    margin: auto;
+    text-align: center;
+}
+
 @media only screen and (max-width: 768px) {
     #form-columns {
         flex-direction: column;
