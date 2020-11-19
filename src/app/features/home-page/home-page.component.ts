@@ -12,12 +12,13 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private auth: AuthService, private api: ApiService, private router: Router) { }
+  constructor(public auth: AuthService, public api: ApiService, public router: Router) { }
 
   user: User;
   profile: Profile;
 
   edited:boolean = false;
+  submitted:boolean = false;
   selected: string;
 
   car: number;
@@ -64,6 +65,8 @@ export class HomePageComponent implements OnInit {
   }
 
   submitForm() {
+    this.submitted = true;
+
     const data = {
       //user_id: this.profile.uid,
       uid: this.profile.uid,
